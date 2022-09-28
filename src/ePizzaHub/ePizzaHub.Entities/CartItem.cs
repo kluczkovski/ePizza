@@ -13,7 +13,7 @@ namespace ePizzaHub.Entities
 
         public int Id { get; set; }
 
-        public int CartId { get; set; }
+        public Guid CartId { get; set; }
 
         public int ItemId { get; private set; }
 

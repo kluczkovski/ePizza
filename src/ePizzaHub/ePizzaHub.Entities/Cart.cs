@@ -16,7 +16,7 @@ namespace ePizzaHub.Entities
 
 		public DateTime CreatedDate { get; set; }
 
-		public virtual List<CartItem>  Items{ get; private set; }
+		public virtual List<CartItem>  Items { get; private set; }
 
 		public bool IsActive { get; set; }
 	}

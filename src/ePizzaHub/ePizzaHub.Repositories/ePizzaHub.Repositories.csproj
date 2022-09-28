@@ -11,6 +11,8 @@
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Interfaces\" />
+    <None Remove="Implementations\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
@@ -23,5 +25,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ePizzaHub.Entities\ePizzaHub.Entities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Implementations\" />
   </ItemGroup>
 </Project>
