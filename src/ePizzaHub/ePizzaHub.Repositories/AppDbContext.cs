@@ -7,6 +7,11 @@ namespace ePizzaHub.Repositories
 {
 	public class AppDbContext : IdentityDbContext<User, Role, int>
 	{
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+
+        }
+
 		public DbSet<Category> Categories { get; set; }
 
         public DbSet<Item> Items { get; set; }
@@ -28,12 +33,12 @@ namespace ePizzaHub.Repositories
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder
-                    .UseSqlServer(@"data source=localhost; initial catalog=ePizzaHub;
-                        user id=sa; password=Test@1@2;");
-            }
+            //if (!optionsBuilder.IsConfigured)
+            //{
+            //    optionsBuilder
+            //        .UseSqlServer(@"data source=localhost; initial catalog=ePizzaHub;
+            //            user id=sa; password=Test@1@2;");
+            //}
 
             base.OnConfiguring(optionsBuilder);
         }
