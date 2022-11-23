@@ -24,6 +24,28 @@ namespace ePizzaHub.WebUI.Controllers
 
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user =  await _authenticationService.AuthenticateUser(model.Email, model.Password);
+                if (user != null)
+                {
+                    if (user.Roles.Contains("Admin"))
+                    {
+                        return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
+                    }
+                    else if (user.Roles.Contains("User"))
+                    {
+                        return RedirectToAction("Index", "Dashboard", new { area = "User" });
+                    }
+                }
+            }
+
+            return View();
+        }
+
         [HttpGet]
         public IActionResult SignUp()
         {
@@ -50,6 +72,24 @@ namespace ePizzaHub.WebUI.Controllers
                 }
             }
 
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> LogOut()
+        {
+            await _authenticationService.SignOut();
+
+            return RedirectToAction("LogOutComplete");
+        }
+
+        public IActionResult LogOutComplete()
+        {
+            return View();
+        }
+
+        public  IActionResult Unauthorize()
+        {
             return View();
         }
     }

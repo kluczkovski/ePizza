@@ -2,6 +2,8 @@
 using ePizzaHub.Services.Configuration;
 using ePizzaHub.Services.Implementations;
 using ePizzaHub.Services.Interfaces;
+using ePizzaHub.WebUI.Helpers;
+using ePizzaHub.WebUI.Interfaces;
 
 namespace ePizzaHub.WebUI.Configuration
 {
@@ -11,6 +13,7 @@ namespace ePizzaHub.WebUI.Configuration
         {
             services.AddScoped<IAuthenticationService, AuthenticationService>();
 
+            services.AddTransient<IUserAccessor, UserAccessor>();
         }
     }
 }
