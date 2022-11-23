@@ -9,6 +9,15 @@
   <ItemGroup>
     <None Remove="Views\Auth\" />
     <None Remove="Configuration\" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\Admin\" />
+    <None Remove="Areas\Admin\Controllers\" />
+    <None Remove="Areas\Admin\Models\" />
+    <None Remove="Areas\Admin\Views\" />
+    <None Remove="Areas\Admin\Views\Shared\" />
+    <None Remove="Areas\Admin\Views\Dashboard\" />
+    <None Remove="Helpers\" />
+    <None Remove="Interface\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" />
@@ -16,6 +25,15 @@
   <ItemGroup>
     <Folder Include="Views\Auth\" />
     <Folder Include="Configuration\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Admin\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Admin\Views\Dashboard\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Interface\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ePizzaHub.Entities\ePizzaHub.Entities.csproj">
